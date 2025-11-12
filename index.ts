@@ -49,7 +49,7 @@ const SkillFrontmatterSchema = z.object({
     .min(20, "Description must be at least 20 characters for discoverability"),
   license: z.string().optional(),
   "allowed-tools": z.array(z.string()).optional(),
-  metadata: z.record(z.string()).optional()
+  metadata: z.record(z.string(), z.string()).optional()
 })
 
 type SkillFrontmatter = z.infer<typeof SkillFrontmatterSchema>
@@ -86,9 +86,7 @@ async function parseSkill(skillPath: string, baseDir: string): Promise<Skill | n
     } catch (error) {
       if (error instanceof z.ZodError) {
         console.error(`❌ Invalid frontmatter in ${skillPath}:`)
-        error.errors.forEach(err => {
-          console.error(`   - ${err.path.join(".")}: ${err.message}`)
-        })
+        console.error(error.format())
       }
       return null
     }

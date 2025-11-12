@@ -189,10 +189,9 @@ gh pr create --base dev --head feature/your-feature-name
 ```
 
 **4. After merge, test on `dev`:**
-
 ```bash
-npm run build
-npm run typecheck
+bun run build
+bun run typecheck
 # Test in local OpenCode project
 ```
 
@@ -219,8 +218,7 @@ For complete release documentation, see [RELEASE.md](RELEASE.md).
 
 ### Prerequisites
 
-- Node.js >= 20.0.0
-- npm or pnpm
+- Bun >= 1.0.0
 - TypeScript knowledge
 
 ### Installation
@@ -231,20 +229,20 @@ git clone git@github.com:YOUR-USERNAME/opencode-skills.git
 cd opencode-skills
 
 # Install dependencies
-npm install
+bun install
 
 # Build the project
-npm run build
+bun run build
 
 # Run type checking
-npm run typecheck
+bun run typecheck
 ```
 
 ### Testing Your Changes
 
 1. **Build the project:**
    ```bash
-   npm run build
+   bun run build
    ```
 
 2. **Test in a local OpenCode project:**
@@ -254,7 +252,7 @@ npm run typecheck
 
 3. **Verify types:**
    ```bash
-   npm run typecheck
+   bun run typecheck
    ```
 
 ## Commit Message Guidelines

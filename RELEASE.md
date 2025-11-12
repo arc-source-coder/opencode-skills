@@ -27,8 +27,8 @@ gh pr create --base dev --head feature/your-feature-name
 
 After PR is merged:
 - Test integrated changes
-- Verify builds: `npm run build`
-- Verify types: `npm run typecheck`
+- Verify builds: `bun run build`
+- Verify types: `bun run typecheck`
 
 ### 2. Promote to `main` When Ready to Release
 
@@ -52,8 +52,8 @@ After merge, Release Please will handle versioning and publishing."
 
 **Review checklist before creating PR:**
 - [ ] All features tested on `dev`
-- [ ] Build passes: `npm run build`
-- [ ] Types pass: `npm run typecheck`
+- [ ] Build passes: `bun run build`
+- [ ] Types pass: `bun run typecheck`
 - [ ] CHANGELOG entries look correct
 - [ ] Breaking changes are clearly documented
 
@@ -83,7 +83,7 @@ When you merge the Release Please PR, it automatically:
 
 **After publish:**
 - Verify on npm: https://www.npmjs.com/package/opencode-skills
-- Test installation: `npm install opencode-skills@latest`
+- Test installation: `bun install opencode-skills@latest`
 
 ### 6. Sync `dev` with `main`
 
@@ -164,7 +164,7 @@ External contributors create PRs directly to `main`. When merged:
 
 ```bash
 # On main branch
-npm version patch  # or minor, major
+bunx npm version patch  # or minor, major
 git push --follow-tags
 ```
 
@@ -196,8 +196,8 @@ After merge:
 Before promoting dev → main:
 
 - [ ] All PRs on `dev` are tested
-- [ ] Build passes: `npm run build`
-- [ ] Types pass: `npm run typecheck`
+- [ ] Build passes: `bun run build`
+- [ ] Types pass: `bun run typecheck`
 - [ ] Breaking changes documented
 - [ ] README updated if needed
 - [ ] Examples tested (if applicable)
@@ -205,7 +205,7 @@ Before promoting dev → main:
 After merging Release Please PR:
 
 - [ ] Verify npm package: https://www.npmjs.com/package/opencode-skills
-- [ ] Test installation: `npm install opencode-skills@latest`
+- [ ] Test installation: `bun install opencode-skills@latest`
 - [ ] Verify GitHub release created
 - [ ] Sync `dev` with `main`
 
